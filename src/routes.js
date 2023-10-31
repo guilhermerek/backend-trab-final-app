@@ -3,8 +3,11 @@ const express = require("express");
 const router = express.Router();
 
 const AlunoController = require("./controllers/AlunoController");
+const UsuarioController = require("./controllers/UsuarioController");
 
 router.get("/ping", AlunoController.ping);
+
+router.post("/usuario", UsuarioController.logar);
 
 router.get("/alunos", AlunoController.all);
 router.get("/aluno/:id", AlunoController.one);
