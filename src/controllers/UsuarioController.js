@@ -19,5 +19,15 @@ module.exports = {
 
         res.json(json);
     },
+    one: async (req, res)=> {
+        let json= {error: '', result:{}};
+
+        let id = req.params.id;
+        let usuario = await UsuarioModel.findById(idcredenciais);
+        if(usuario){
+            json.result=usuario;
+        }
+        res.json(json);
+    }
     
 }

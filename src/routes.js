@@ -7,7 +7,9 @@ const UsuarioController = require("./controllers/UsuarioController");
 
 router.get("/ping", AlunoController.ping);
 
+
 router.post("/usuario", UsuarioController.logar);
+router.get("/usuario/:id", UsuarioController.one);
 
 router.get("/alunos", AlunoController.all);
 router.get("/aluno/:id", AlunoController.one);
