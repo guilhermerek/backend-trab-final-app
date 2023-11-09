@@ -1,4 +1,4 @@
-const UsuarioController = require("../models/UsuarioModel");
+const UsuarioModel = require("../models/UsuarioModel");
 
 module.exports = {
     logar: async (req, res)=>{
@@ -23,7 +23,7 @@ module.exports = {
         let json= {error: '', result:{}};
 
         let id = req.params.id;
-        let usuario = await UsuarioModel.findById(idcredenciais);
+        let usuario = await UsuarioModel.findById(id);
         if(usuario){
             json.result=usuario;
         }
