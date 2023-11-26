@@ -3,7 +3,7 @@ const db = require("../db");
 module.exports = {
     findUser: (grr, senha) => {
         return new Promise((resolve, reject)=>{
-            db.query('SELECT * FROM credenciais WHERE grr = ? AND senha = ?', [grr, senha], (error, results)=> {
+            db.query('SELECT * FROM credenciais WHERE usuario = ? AND senha = ?', [grr, senha], (error, results)=> {
                 if(error){
                     reject(error); return;
                 }
@@ -12,6 +12,7 @@ module.exports = {
                 }else{
                     resolve(false);
                 }
+                console.log(results);
             })
         });
     },
